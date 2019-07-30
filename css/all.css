@@ -1,0 +1,379 @@
+/*css reset*/
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	  font-size: 100%;
+	  font: inherit;
+	  vertical-align: baseline; }
+
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+	  display: block; }
+
+	body {
+	  line-height: 1; }
+
+	ol, ul {
+	  list-style: none; }
+
+	blockquote, q {
+	  quotes: none; }
+
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	  content: '';
+	  content: none; }
+
+	table {
+	  border-collapse: collapse;
+	  border-spacing: 0; }
+
+	a {
+	  text-decoration: none; }
+
+	img {
+	  max-width: 100%;
+	  height: auto; }
+
+/*-------base 全域共通設定---------*/
+	* {
+	  box-sizing: border-box;
+	  -webkit-box-sizing: border-box; }
+
+	body {
+	  font-family: '微軟正黑體';
+	color: #ff4a4a4a
+	}
+
+
+	h2{
+		font-size: 24px;
+		color: #424242;
+		text-align: center;
+    	margin-bottom: 36px;
+	}
+	p {
+		color: #818685;
+	}
+
+	.max-width {
+	  width: 100%; 
+	}
+
+	.fixed-width {
+	  max-width: 795px;
+	  margin: 0 auto;
+	 
+	}
+	.display-block{
+		display: block;
+	}
+
+/*-------mixin 常用技巧-------*/
+	.clearfix::after {
+	  content: "";
+	  display: block;
+	  clear: both; 
+	}
+	.hide-text{
+		text-indent: -150%;
+		overflow: hidden;
+		white-space:nowrap;
+	}
+
+
+/*-------正文開始----------------*/
+/*header*/
+	.header{
+		background: #424242;
+		padding: 72px 173px;
+	}
+	
+	.header .logoBox{
+		float: left;
+		width: 117px;
+		height: 117px;
+		background:  url(../images/BMICLogo.png) no-repeat;
+		margin-right: 97px;
+		margin-top: 20px;
+	}
+	.inputBox{
+		float: left;
+		width: 250px;
+		margin-right: 53px;
+
+	}
+		.inputBox label{
+			color:#ffd366;
+			font-size: 18px;
+			display: block;
+			margin-bottom: 7px;
+		}
+		input[type=text]{
+			width: 250px;
+			background: rgba(255,255,255,0.18);
+			border: 2px solid #FFD366;
+			border-radius: 10px;
+			padding: 2.5px 16px;
+			margin-bottom:23px;
+			font-size: 24px;
+			color: rgba(255,255,255,0.8);
+			font-family: 微軟正黑體;
+		}
+
+			::-webkit-input-placeholder { /* WebKit browsers */
+				color: rgba(255,255,255,0.4);
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				color: rgba(255,255,255,0.4);
+			}
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				color: rgba(255,255,255,0.4);
+			}
+			:-ms-input-placeholder { /* Internet Explorer 10+ */
+				color: rgba(255,255,255,0.4);
+			}
+
+	.resultBtn{
+		float: left;
+		margin-top: 20px;
+
+		
+	}
+	.resultBtn a{
+		display: block;
+		width: 120px;
+		height: 120px;
+		background: #ffd366;
+		border-radius: 100px;
+		text-align: center;
+		line-height: 120px;
+		font-size: 24px;
+		font-weight: bold;
+		color: #424242;
+	}
+	.resultBtn a:hover{
+		box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+	}
+	.resultBtn a:active{
+		background: #DEA921;
+		box-shadow: none;
+	}
+	.static{
+		float: left;
+		margin-top: 20px;
+		display: none;
+	}
+	.re{
+		width: 33px;
+		height: 33px;
+		border: 3px solid #424242;
+		border-radius: 30px;
+		position: absolute;
+		top: 84px;
+		left: 92px;
+		cursor: pointer;
+	}
+
+	.staticCircle{
+		width: 130px;
+		height: 130px;
+		border-radius: 100px;
+		float: left;
+		font-size: 14px;
+		text-align: center; 
+		padding-top: 35px;
+		padding-bottom: 32px;
+		position: relative;
+	}
+	.staticText{
+		font-weight: bold;
+		font-size: 32px;
+		float: left;
+		line-height: 126px;
+    	margin-left: 16px;
+	}
+	.bmiValue{
+		font-size: 32px;
+		display: block;
+	}
+/*static顏色模組*/
+	/*理想*/
+		.static-colorIdeal{
+			color: #86D73E;
+		}
+		.circle-borderIdeal{
+			border:6px solid #86D73E ;
+		}
+		.re-bgIdeal{
+			background:#86D73E no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+	/*過輕*/
+		.static-colorThin{
+			color: #31BAF9;
+		}
+		.circle-borderThin{
+			border:6px solid #31BAF9 ;
+		}
+		.re-bgThin{
+			background:#31BAF9 no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+	/*過重*/
+		.static-colorFat{
+			color: #FF982D;
+		}
+		.circle-borderFat{
+			border:6px solid #FF982D ;
+		}
+		.re-bgFat{
+			background:#FF982D no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+	/*輕肥*/
+		.static-colorLfat{
+			color: #FF6C02;
+		}
+		.circle-borderLfat{
+			border:6px solid #FF6C02 ;
+		}
+		.re-bgLfat{
+			background:#FF6C02 no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+	/*中肥*/
+		.static-colorMfat{
+			color: #FF1200 ;
+		}
+		.circle-borderMfat{
+			border:6px solid #FF1200  ;
+		}
+		.re-bgMfat{
+			background:#FF1200  no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+	/*重肥*/
+		.static-colorVfat{
+			color: #94004F ;
+		}
+		.circle-borderVfat{
+			border:6px solid #94004F  ;
+		}
+		.re-bgVfat{
+			background:#94004F  no-repeat url(../images/icons_loop.png);
+			background-position: center;
+		}
+
+/*content*/
+	.content{
+		background: #f5f5f5;
+		padding:48px 200px 72px 200px;
+	}
+	
+	ul.record{
+		width: 625px;
+		margin: 0 auto;
+
+	}
+	.record li{
+		padding: 21px 0px 21px 19px;
+		background: #fff;
+		height: 62px;
+		margin-bottom: 16px;
+		font-size: 20px;
+		color: #4A4A4A;
+		font-weight: bold;
+		position: relative;
+	}
+	.liText{
+		position: absolute;
+	}
+
+	.label-box{
+		display: inline-block;
+	}
+		.l-bmi{
+			width: 120px;
+			margin-left: 125px;
+		}
+	
+	.r-label{
+		font-size: 12px;
+		color: #424242;
+		font-weight: normal;
+		
+	}
+		
+		.l-weight{
+			width: 135px;
+		}
+		.l-height{
+			width: 120px;
+		}
+		.l-date{
+			margin-left: 21px;	
+		}
+ 		
+ 	/*border顏色*/
+		.border{
+			width: 7px;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.ideal{
+			background: #86D73F;
+			box-shadow: 2px 0 3px 0 rgba(133,215,63,0.29);
+		}
+		.too-thin{
+			background: #31BAF9;
+			box-shadow: 2px 0 3px 0 rgba(49,186,249,0.29);
+		}
+		
+		.fat{
+			background: #FF982D;
+			box-shadow: 2px 0 3px 0 rgba(255,152,45,0.29);
+		}
+
+		.little-fat{
+			background:#FF6C02;
+			box-shadow: 2px 0 3px 0 rgba(255,108,2,0.29);
+		}
+		.medium-fat{
+			background: #FF1200;
+			box-shadow: 2px 0 3px 0 rgba(255,17,0,0.29);
+		}
+		.very-fat{
+			border-left: 7px solid #94004F ;
+			background: #94004f;
+			box-shadow: 2px 0 3px 0 rgba(148,0,79,0.29);
+		}
+	
+
+.footer{
+	padding: 22px 0;
+	background: #ffd366;
+	width: 100%;
+}
+	.footer .logoBox{
+		width: 55px;
+		height: 55px;
+		background:  url(../images/bmic_Logo.png) no-repeat;
+		margin: 0 auto;	
+	}
