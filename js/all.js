@@ -23,7 +23,7 @@ reBtn.addEventListener('click',reset);
 	var conditionClass;
 	var conditionText="";
 	var hcm;
-	
+	var date
 
 //計算bmi
 function caculate(){
@@ -41,7 +41,8 @@ function local(){
 		heightCM:hcm,
 		weight:w,
 		condition:conditionClass,
-		conditionName:conditionText
+		conditionName:conditionText,
+		time:date
 	};
 
 	dataAry.push(content);
@@ -54,7 +55,8 @@ function local(){
 function updateList(){
 	var strAll="";
 	var today= new Date();
-	var date=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	console.log(today);
+	date=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	
 	if(dataAry.length==0){
 		var empty=
@@ -77,7 +79,7 @@ function updateList(){
 		'<div class="label-box l-height"><span class="r-label">height  </span>'+
 		'<span class="staics">'+dataAry[i].heightCM+"cm"+'</span></div>'+
 
-		'<span class="r-label l-date">'+date+'</span></li>';
+		'<span class="r-label l-date">'+dataAry[i].time+'</span></li>';
 			strAll+=str;
 		
 		}
@@ -185,3 +187,4 @@ function update(e){
 updateList();
 /*dataAry.splice(0,16);
 console.log(dataAry);*/
+
